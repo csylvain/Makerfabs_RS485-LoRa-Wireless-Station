@@ -15,7 +15,7 @@
 #define SPI_MISO 12
 #define SPI_SCK 14
 
-#define FREQUENCY 868.0 // 868.0 // 433.0 915.0
+#define FREQUENCY 915.0 // 433.0 [EU], 490.0 [CN], 868.0 [EU], 915.0 [US]
 #define BANDWIDTH 125.0
 #define SPREADING_FACTOR 9
 #define CODING_RATE 7
@@ -60,8 +60,8 @@ void setup()
 
 void loop()
 {
-
-  int state = radio.transmit("Lora send test");
+  // some SX127x implementations strip first 2 or 4 chars from received packet
+  int state = radio.transmit("    Lora send test"); // pad beginning of string with blanks
   if (state == ERR_NONE)
   {
     // the packet was successfully transmitted

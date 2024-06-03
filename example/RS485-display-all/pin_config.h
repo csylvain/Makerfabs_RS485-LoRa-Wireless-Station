@@ -3,6 +3,7 @@
 
 #define OLED_RESET -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 
+#define Display_LED 21 // Blue LED
 #define Display_power 19
 #define RS485_power 18
 
@@ -20,7 +21,7 @@
 #define SPI_MISO 12
 #define SPI_SCK 14
 
-#define FREQUENCY 434.0
+#define FREQUENCY 434.0 // 433.0 [EU], 490.0 [CN], 868.0 [EU], 915.0 [US] -> set appropriate value in sketch (!!)
 #define BANDWIDTH 125.0
 #define SPREADING_FACTOR 9
 #define CODING_RATE 7
